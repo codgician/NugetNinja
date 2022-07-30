@@ -1,9 +1,9 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
-namespace NugetNinja.DependencySolver.Models;
-
 using Microsoft.NugetNinja.Core;
+
+namespace NugetNinja.DependencySolver.Models;
 
 public class PackageCudf
 {

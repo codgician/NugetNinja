@@ -101,7 +101,10 @@ public class PackageModel
                 return c.RelOp switch
                 {
                     RelationOperator.Equal => ctx.MkOr(ctx.MkNot(inst[i]), conflictPackage.inst[conflictPackageVersionId]),
-                    RelationOperator.NotEqual => ctx.MkOr(ctx.MkNot(inst[i]), conflictPackage.ile[conflictPackageVersionId - 1], conflictPackage.ige[conflictPackageVersionId + 1]),
+                    RelationOperator.NotEqual => ctx.MkOr(
+                        ctx.MkNot(inst[i]), 
+                        conflictPackage.ile[conflictPackageVersionId - 1],
+                        conflictPackage.ige[conflictPackageVersionId + 1]),
                     RelationOperator.GreaterOrEqual => ctx.MkOr(ctx.MkNot(inst[i]), conflictPackage.ige[conflictPackageVersionId]),
                     RelationOperator.LessOrEqual => ctx.MkOr(ctx.MkNot(inst[i]), conflictPackage.ile[conflictPackageVersionId]),
                     _ => throw new NotImplementedException()

@@ -1,19 +1,18 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
+using Microsoft.Z3;
 using NugetNinja.DependencySolver.Models;
 
 namespace NugetNinja.DependencySolver.Services;
 
-using Microsoft.Z3;
-
-public class UpgradeSolver : IDisposable
+public class MaxSatSolver : IDisposable
 {
-    private Context ctx;
+    private readonly Context ctx;
 
     public Dictionary<string, PackageModel> Packages { get; set; }
 
-    public UpgradeSolver(List<PackageCudf> packages)
+    public MaxSatSolver(List<PackageCudf> packages)
     {
         // Initialize Z3 context
         ctx = new Context();
@@ -38,6 +37,10 @@ public class UpgradeSolver : IDisposable
         // Soft clauses
         if (solver.Check() == Status.SATISFIABLE)
         {
+            var model = solver.Model;
+
+            // Parse model
+
             return;
         }
         else
