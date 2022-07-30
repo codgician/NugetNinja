@@ -86,7 +86,7 @@ public class PackageModel
                     _ => throw new NotImplementedException()
                 };
             }))
-            .Aggregate((x, y) => ctx.MkAnd(x, y));
+            .Aggregate(ctx.MkTrue(), (x, y) => ctx.MkAnd(x, y));
     } 
 
     private BoolExpr GetDependClause(Context ctx, Dictionary<string, PackageModel> packages)
@@ -107,7 +107,7 @@ public class PackageModel
                     _ => throw new NotImplementedException()
                 };
             }))
-            .Aggregate((x, y) => ctx.MkAnd(x, y));
+            .Aggregate(ctx.MkTrue(), (x, y) => ctx.MkAnd(x, y));
     }
 
     public List<BoolExpr> GetHardClauses(Context ctx, Dictionary<string, PackageModel> packages)

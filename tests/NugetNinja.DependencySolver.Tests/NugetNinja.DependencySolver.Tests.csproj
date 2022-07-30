@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\NugetNinja.DependencySolver\NugetNinja.DependencySolver.csproj" />
+    <ProjectReference Include="..\..\src\NugetNinja.DependencySolver\NugetNinja.DependencySolver.csproj" />
   </ItemGroup>
 
 </Project>

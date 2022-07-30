@@ -1,17 +1,19 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
-namespace NugetNinja.DependencySolver.Models;
+using NugetNinja.DependencySolver.Models;
+
+namespace NugetNinja.DependencySolver.Services;
 
 using Microsoft.Z3;
 
-public class MaxSatModel : IDisposable
+public class UpgradeSolver : IDisposable
 {
     private Context ctx;
 
     public Dictionary<string, PackageModel> Packages { get; set; }
 
-    public MaxSatModel(List<PackageCudf> packages)
+    public UpgradeSolver(List<PackageCudf> packages)
     {
         // Initialize Z3 context
         ctx = new Context();
@@ -20,7 +22,10 @@ public class MaxSatModel : IDisposable
         Packages = packages
             .GroupBy(p => p.Name)
             .ToDictionary(p => p.Key, p => new PackageModel(ctx, p.Key, p.ToList()));
+    }
 
+    public void Solve()
+    {
         // Apply package constraints
         var hardClauses = Packages.Values
             .SelectMany(p => p.GetHardClauses(ctx, Packages))
@@ -31,8 +36,16 @@ public class MaxSatModel : IDisposable
         solver.Assert(hardClauses);
 
         // Soft clauses
-        // to be implemented...
-    }
+        if (solver.Check() == Status.SATISFIABLE)
+        {
+            return;
+        }
+        else
+        {
+            throw new Exception("No feasilbe solution found");
+        }
+    } 
+
     public void Dispose()
     {
         ctx.Dispose();
