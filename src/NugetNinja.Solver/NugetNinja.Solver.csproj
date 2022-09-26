@@ -12,4 +12,8 @@
     <PackageReference Include="Z3.Linq" Version="1.0.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\NugetNinja.Core\NugetNinja.Core.csproj" />
+  </ItemGroup>
+
 </Project>
