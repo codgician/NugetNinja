@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
-namespace NugetNinja.Solver.Tests
+namespace NugetNinja.Analyzer.Tests
 {
     [TestClass]
     public class UnitTest1

@@ -3,7 +3,7 @@
 
 using Microsoft.NugetNinja.Core;
 
-namespace NugetNinja.Solver.Models;
+namespace NugetNinja.Analyzer.Models;
 
 public class PackageUniverse
 {

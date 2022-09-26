@@ -3,7 +3,7 @@
 
 using Microsoft.Z3;
 
-namespace NugetNinja.Solver.Models
+namespace NugetNinja.Analyzer.Models
 {
     public interface IMaxSatSolver
     {

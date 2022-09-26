@@ -29,9 +29,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NugetNinja.MissingPropertyP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NugetNinja.PrBot", "src\NugetNinja.PrBot\NugetNinja.PrBot.csproj", "{FF24D161-7796-4CA2-A652-061DBEE89626}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NugetNinja.Solver", "src\NugetNinja.Solver\NugetNinja.Solver.csproj", "{5DBDE5DB-C991-49AF-921C-2F9FD294AA07}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NugetNinja.Analyzer", "src\NugetNinja.Analyzer\NugetNinja.Analyzer.csproj", "{5DBDE5DB-C991-49AF-921C-2F9FD294AA07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NugetNinja.Solver.Tests", "tests\NugetNinja.Solver.Tests\NugetNinja.Solver.Tests.csproj", "{42E1AEB5-E50B-4688-9FE0-99439C8F0704}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NugetNinja.Analyzer.Tests", "tests\NugetNinja.Analyzer.Tests\NugetNinja.Analyzer.Tests.csproj", "{42E1AEB5-E50B-4688-9FE0-99439C8F0704}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
