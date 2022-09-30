@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\NugetNinja.Analyzer\NugetNinja.Analyzer.csproj" />
+    <ProjectReference Include="..\..\src\NugetNinja.Core\NugetNinja.Core.csproj" />
   </ItemGroup>
 
 </Project>

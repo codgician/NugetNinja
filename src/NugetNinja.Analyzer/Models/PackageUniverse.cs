@@ -3,7 +3,7 @@
 
 using Microsoft.NugetNinja.Core;
 
-namespace NugetNinja.Analyzer.Models;
+namespace Microsoft.NugetNinja.Analyzer.Models;
 
 public class PackageUniverse : PackageDictionary<PackageDescription>
 {

@@ -3,7 +3,7 @@
 
 using Microsoft.NugetNinja.Core;
 
-namespace NugetNinja.Analyzer.Models;
+namespace Microsoft.NugetNinja.Analyzer.Models;
 
 public class PackageDescription
 {
@@ -16,7 +16,12 @@ public class PackageDescription
 
     public (string, NugetVersion) NameVersion => (Name, Version);
 
-    public PackageDescription(string name, NugetVersion version, bool installed, VersionConstraint[] conflicts, VersionConstraint[] depends)
+    public PackageDescription(
+        string name, 
+        NugetVersion version, 
+        bool installed, 
+        VersionConstraint[] conflicts, 
+        VersionConstraint[] depends)
     {
         Name = name;
         Version = version;

@@ -3,10 +3,10 @@
 
 using Microsoft.Z3;
 
-namespace NugetNinja.Analyzer.Models
+namespace Microsoft.NugetNinja.Analyzer.Models
 {
     public interface IMaxSatSolver
     {
-        public Model? Solve(Context context, Microsoft.Z3.Solver solver, BoolExpr[] hardConstraints, (BoolExpr, uint, string)[] softConstraints);
+        public Model? Solve(Context context, BoolExpr[] hardConstraints, (BoolExpr, uint, string)[] softConstraints);
     }
 }

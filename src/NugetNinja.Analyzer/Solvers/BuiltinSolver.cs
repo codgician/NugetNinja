@@ -2,13 +2,13 @@
 // Licensed under the MIT License.
 
 using Microsoft.Z3;
-using NugetNinja.Analyzer.Models;
+using Microsoft.NugetNinja.Analyzer.Models;
 
 namespace NugetNinja.Analyzer.Solvers
 {
     public class BuiltinSolver : IMaxSatSolver
     {
-        public Model? Solve(Context context, Solver solver, BoolExpr[] hardConstraints, (BoolExpr, uint, string)[] softConstraints)
+        public Model? Solve(Context context, BoolExpr[] hardConstraints, (BoolExpr, uint, string)[] softConstraints)
         {
             var optimize = context.MkOptimize();
 
